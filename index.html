@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Die Gamescom</title>
+    <style>
+        /* CSS: This section handles the styling and colors */
+        :root {
+            --bg-color: #f4f4f9;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+            --btn-bg: #222222;
+            --btn-text: #ffffff;
+        }
+        
+        /* Variables for Dark Mode */
+        .dark-mode {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --btn-bg: #e0e0e0;
+            --btn-text: #121212;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            transition: background-color 0.4s, color 0.4s;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: var(--btn-bg);
+            color: var(--btn-text);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: background-color 0.4s;
+        }
+
+        .text-section {
+            flex: 1 1 400px;
+        }
+
+        .image-section {
+            flex: 1 1 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        /* Makes the website stack vertically on phones */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HTML: This section handles the actual text and structure -->
+<div class="container">
+    <header>
+        <button id="theme-toggle">🌙 Dark Mode</button>
+    </header>
+
+    <main class="content-wrapper">
+        <div class="text-section">
+            <h1>Die Gamescom</h1>
+            <p>Die Gamescom (Eigenschreibweise: gamescom) ist die weltweit größte Messe für Computer- und Videospiele sowie Unterhaltungselektronik, welche jährlich in Köln stattfindet.[1] Hersteller aus aller Welt präsentieren auf der Messe ihre neue Soft- und Hardware.</p>
+            <p>Jeweils wenige Tage im Vorfeld der Gamescom findet die sogenannte Devcom (neuer Name ab Oktober 2025: „gamescom dev“) als Konferenz speziell für die Entwickler-Branche statt.[2] Am Vorabend der Eröffnung wird zudem jährlich die „gamescom – Opening Night Live“ – Show (ONL) veranstaltet. Diese präsentiert die neusten Trailer und Ankündigungen der internationalen Games-Branche und wird von Geoff Keighley moderiert.[3]</p>
+            <p>Neben den verschiedenen öffentlichen Messebereichen existiert darüber hinaus ein geschlossener Bereich für Fachbesucher, wie beispielsweise Händler, Journalisten und Entwickler.[4]</p>
+            <p>Seit dem Jahr 2009 findet die Gamescom auf dem Gelände der Koelnmesse statt. Zuvor existierte sie bereits von 2002 bis 2008 unter dem Namen Games Convention in Leipzig. Träger der Messe ist seit 2018 der Verband der deutschen Games-Branche – game.</p>
+        </div>
+        
+        <div class="image-section">
+            <!-- I included a public Wikimedia image of Gamescom. You can change the URL inside 'src' later if you want a different picture. -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Gamescom_2012_Cologne_Germany_%287810332840%29.jpg/800px-Gamescom_2012_Cologne_Germany_%287810332840%29.jpg" alt="Gamescom Messe">
+        </div>
+    </main>
+</div>
+
+<!-- JavaScript: This section handles the interactive dark mode -->
+<script>
+    const btn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    btn.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        
+        if (body.classList.contains('dark-mode')) {
+            btn.textContent = '☀️ Light Mode';
+        } else {
+            btn.textContent = '🌙 Dark Mode';
+        }
+    });
+</script>
+
+</body>
+</html>
